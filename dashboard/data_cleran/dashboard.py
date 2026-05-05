@@ -114,8 +114,9 @@ plt.rcParams.update(
 def load_data() -> pd.DataFrame:
     base_dir = Path(__file__).resolve().parent
     candidates = [
+        base_dir / "datasoal_clean.csv",
+        base_dir.parent / "data" / "datasoal_clean.csv",
         base_dir / "data_cleran" / "datasoal_clean.csv",
-        base_dir.parent / "data" / "datasoal.csv",
         base_dir.parent / "data_clean.csv",
         base_dir / "data_clean.csv",
     ]
@@ -126,7 +127,7 @@ def load_data() -> pd.DataFrame:
     else:
         raise FileNotFoundError(
             "Dataset tidak ditemukan. Letakkan file CSV di dashboard/data_cleran/datasoal_clean.csv "
-            "atau data/datasoal.csv."
+            "atau dashboard/data/datasoal_clean.csv."
         )
 
     # Standardize text columns
@@ -181,7 +182,7 @@ range_soal = st.sidebar.slider(
 )
 
 st.sidebar.divider()
-st.sidebar.caption("Data: datasoal.csv\nVersi bersih: datasoal_clean.csv")
+st.sidebar.caption("Data aktif: datasoal_clean.csv")
 
 df_fil = df[
     df["topik"].isin(sel_topik) & df["soal_len"].between(range_soal[0], range_soal[1])
@@ -192,7 +193,7 @@ df_fil = df[
 # ────────────────────────────────────────────────────────────
 st.title("📊 Dashboard Analisis Dataset Chatbot IPA SD")
 st.write(
-    "Insight dari **datasoal.csv** — pasangan soal, jawaban, contoh, dan konteks untuk IPA kelas 5."
+    "Insight dari **datasoal_clean.csv** — pasangan soal, jawaban, contoh, dan konteks untuk IPA kelas 5."
 )
 st.divider()
 
@@ -490,5 +491,5 @@ with tab5:
 st.divider()
 st.caption(
     "📌 CC26-PSU312 · Coding Camp 2026 powered by DBS Foundation | "
-    "Dataset: datasoal.csv | Tech Stack: Python · Pandas · Matplotlib · Streamlit"
+    "Dataset: datasoal_clean.csv | Tech Stack: Python · Pandas · Matplotlib · Streamlit"
 )
