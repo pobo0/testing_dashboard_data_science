@@ -1,0 +1,8 @@
+# Sumber Dataset
+https://www.omahbse.com/ktsp/file/sd-5_ipa_002/
+
+# Referensi Ilmiah
+https://www.ijcis.net/index.php/ijcis/article/view/116
+
+# Streamlit Deployment
+https://share.streamlit.io/
