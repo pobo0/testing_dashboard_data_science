@@ -80,6 +80,8 @@ st.markdown(
             border-radius: 10px;
             padding: 12px 14px;
             font-size: 13px;
+            
+            
         }
     </style>
     """,
@@ -114,11 +116,9 @@ plt.rcParams.update(
 def load_data() -> pd.DataFrame:
     base_dir = Path(__file__).resolve().parent
     candidates = [
+        base_dir.parent / "data_clean" / "datasoal_clean.csv",
         base_dir / "datasoal_clean.csv",
         base_dir.parent / "data" / "datasoal_clean.csv",
-        base_dir / "data_cleran" / "datasoal_clean.csv",
-        base_dir.parent / "data_clean.csv",
-        base_dir / "data_clean.csv",
     ]
     for path in candidates:
         if path.exists():
@@ -126,8 +126,7 @@ def load_data() -> pd.DataFrame:
             break
     else:
         raise FileNotFoundError(
-            "Dataset tidak ditemukan. Letakkan file CSV di dashboard/data_cleran/datasoal_clean.csv "
-            "atau dashboard/data/datasoal_clean.csv."
+            "Dataset tidak ditemukan. Letakkan file CSV di dashboard/data_clean/datasoal_clean.csv."
         )
 
     # Standardize text columns
