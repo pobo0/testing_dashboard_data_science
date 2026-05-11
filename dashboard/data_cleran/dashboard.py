@@ -418,9 +418,9 @@ with tab5:
 
     if len(topik_stats) > 0:
         topik_stats["skor"] = (
-            (topik_stats["jumlah_soal"] / topik_stats["jumlah_soal"].max()) * 40
-            + (topik_stats["subtopik_unik"] / topik_stats["subtopik_unik"].max()) * 30
-            + (topik_stats["rata_jawab"] / topik_stats["rata_jawab"].max()) * 30
+            (topik_stats["jumlah_soal"] / topik_stats["jumlah_soal"].max()) * 50
+            + (topik_stats["subtopik_unik"] / topik_stats["subtopik_unik"].max()) * 25
+            + (topik_stats["rata_jawab"] / topik_stats["rata_jawab"].max()) * 25
         ).round(1)
     else:
         topik_stats["skor"] = []
@@ -470,9 +470,9 @@ with tab5:
     st.markdown(
         """
         **Catatan metodologi skor:**
-        - 40% bobot jumlah soal
-        - 30% bobot jumlah subtopik unik
-        - 30% bobot rata-rata panjang jawaban
+        - 50% bobot jumlah soal
+        - 25% bobot jumlah subtopik unik
+        - 25% bobot rata-rata panjang jawaban
         """
     )
 
