@@ -5,4 +5,4 @@ https://www.omahbse.com/ktsp/file/sd-5_ipa_002/
 https://www.ijcis.net/index.php/ijcis/article/view/116
 
 # Streamlit Deployment
-https://share.streamlit.io/
+https://testingdashboarddatascience-ysy6kkgswc8lxbsndct7p9.streamlit.app/
